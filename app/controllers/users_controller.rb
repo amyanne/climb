@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :redirect_if_signed_in
 
     def new
@@ -23,4 +23,4 @@ class UserController < ApplicationController
             params.require(:user).permit(:email, :password)
         end 
 end
-end
+

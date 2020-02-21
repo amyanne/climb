@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
     
-    has_secure_password
+    #has_secure_password
 
     def self.find_or_create_by_omniauth(auth)
         @user = User.find_by(email: auth["info"]["email"])

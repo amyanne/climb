@@ -4,7 +4,7 @@ class User < ApplicationRecord
     has_secure_password
     
     has_many :routes
-    has_many :logs through :routes
+    has_many :logs, through: :routes
 
     def self.find_or_create_by_omniauth(auth)
         @user = User.find_by(email: auth["info"]["email"])

@@ -1,0 +1,6 @@
+<%= form_for [@user, route] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+
+    <%= f.submit button_name, class: "btn" %>
+<% end %>

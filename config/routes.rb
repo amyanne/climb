@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   #--Climbing Routes Routes--#
   resources :users, only: [] do
-    resources :route 
+    resources :routes 
   end
 
 

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
 
   def redirect_if_signed_in
-    redirect_to user_route_index_path(current_user) if is_logged_in?
+    redirect_to user_routes_path(current_user) if is_logged_in?
   end 
 
   private

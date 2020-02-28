@@ -48,7 +48,7 @@ end
       end 
       
       def route_params
-        params.require(:route).permit(:name)
+        params.require(:route).permit(:name, :location, :grade)
       end 
 
 end

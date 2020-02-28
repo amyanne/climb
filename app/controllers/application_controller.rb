@@ -9,13 +9,14 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless is_logged_in?
   end 
 
+
   def redirect_if_signed_in
-    redirect_to pets_path if is_logged_in?
+    redirect_to user_route_index_path(current_user) if is_logged_in?
   end 
 
   private
     def is_logged_in?
-      !!session[:user_id]
+      session[:user_id]
     end 
 
     def current_user

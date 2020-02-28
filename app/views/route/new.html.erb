@@ -1,2 +1,28 @@
-<h1>Route#new</h1>
-<p>Find me in app/views/route/new.html.erb</p>
+<%= form_tag user_route_path(@user.id), method: "get" do %>
+    <%= text_field_tag :query %>
+    <%= submit_tag :search %>
+<% end %>
+
+    <table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>View</th>
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <% if current_user == @user %>
+                <% @routes.each do |route| %>
+                    <tr>
+                        <td><%= route.name %></td>
+                        <td><%= link_to "View", user_route_path(@user, route) %></td>
+                        <td><%= link_to "Edit", edit_user_route_path(@user, route) %></td>
+                        <td><%= link_to "Delete", user_route_path(@user, route), method: "delete" %></td>
+                    </tr>
+                <% end %>
+            <% end %>
+        </tbody>
+    </table>

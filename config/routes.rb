@@ -14,8 +14,12 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     resources :routes 
   end
+
+  resources :routes, only: [] do 
+      resources :logs
+  end 
  
-  #--Log Routes--#
+  #--Comment Routes--#
   resources :logs, only: [] do 
     resources :comments
   end 

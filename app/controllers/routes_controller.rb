@@ -43,9 +43,6 @@ end
             @user = User.find_by_id(params[:user_id])
       end 
       
-      def set_route
-          @route = Route.find_by_id(params[:id])
-      end 
       
       def route_params
         params.require(:route).permit(:name, :location, :grade)

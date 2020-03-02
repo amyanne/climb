@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
     def current_user
       User.find(session[:user_id])
     end 
+
+    def set_route
+      @route = Route.find_by_id(params[:route_id])
+    end 
 end

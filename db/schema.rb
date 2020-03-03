@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_023931) do
+ActiveRecord::Schema.define(version: 2020_03_03_023433) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_023931) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "log_date"
     t.string "route_id"
+    t.string "user_id"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_023931) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "user_id"
     t.string "route_id"
+    t.string "log_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         if auth
             @user = User.find_or_create_by_omniauth(auth)
             session[:user_id] = @user.id
-            redirect_to user_route_path(@user)
+            redirect_to log_route_path(@user)
         else
             @user = User.find_by(email: user_params[:email])
             if @user && @user.authenticate(user_params[:password])

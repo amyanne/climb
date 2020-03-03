@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
 
   def redirect_if_signed_in
-    redirect_to user_routes_path(current_user) if is_logged_in?
+    redirect_to user_logs_path(current_user) if is_logged_in?
   end 
 
   private
@@ -26,4 +26,8 @@ class ApplicationController < ActionController::Base
     def set_route
       @route = Route.find_by_id(params[:route_id])
     end 
+
+    def set_user
+      @user = User.find_by_id(params[:user_id])
+end 
 end

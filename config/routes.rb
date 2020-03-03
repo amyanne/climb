@@ -12,11 +12,11 @@ Rails.application.routes.draw do
 
   #--Climbing Routes Routes--#
   resources :users, only: [] do
-    resources :routes 
+    resources :logs
   end
 
-  resources :routes, only: [] do 
-      resources :logs
+  resources :logs, only: [] do 
+      resources :route
   end 
  
   #--Comment Routes--#

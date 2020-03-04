@@ -21,10 +21,4 @@ class User < ApplicationRecord
         end 
     end 
 
-    def routes_attributes=(route_attributes)
-        route_attributes.values.each do |route_attribute|
-          route = Route.find_or_create_by(route_attribute)
-          self.routes << route
-        end 
-    end 
 end

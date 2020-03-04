@@ -1,7 +1,6 @@
 Comments:
   <% @log.comments.each do |comment| %>
-    <%= link_to comment.user.username, user_path(comment.user) %> said
-    <%= comment.content %>
+    <td><%= comment.content %></td>
   <% end %>
 
 <h1>Leave a reply!</h1>

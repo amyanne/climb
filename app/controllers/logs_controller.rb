@@ -18,8 +18,9 @@ class LogsController < ApplicationController
     puts "lol lol lol #{@log.inspect}"
     
     if @log.save
-      puts "?????????"
+      puts "????????? #{@log.inspect}"
         redirect_to user_logs_path
+        puts "!!!!!@@@@@@@@@@@@@@!!!!!!!!!!! #{@log.route.inspect}"
     else 
         render :new
     end
@@ -38,6 +39,10 @@ private
   def log_params
     params.require(:log).permit(:log_date, :content, :num_of_attempts, :user_id, :route_id, route_attributes: [:name, :location, :grade])
   end 
+
+  def set_log
+    @log = Log.find_by_id(params[:id])
+  end
 
   
 

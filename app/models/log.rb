@@ -9,19 +9,21 @@ class Log < ApplicationRecord
     def route_attributes=(route_attributes)
         @route = Route.find_or_create_by(route_attributes)
         puts "omg I wish this worked #{@route.inspect}"
-        @route.save!
         puts "omg I wish this worked #{@route.inspect}"
         puts "here is the route id #{@route.id}"
         self[:route_id] = @route.id
+        
     end 
 
     def comment_attributes=(comment_attributes)
-        comment_attributes.values.each do |c|
-            comment = Comment.create(c)
-            self.comments << comment
-        end
+            @comment = Comment.create(comment_attributes)
+            self.comments << @comment
 
     end 
+
+    def route
+        Route.find_by_id(self.route_id)
+    end
 
     
 end

@@ -15,9 +15,18 @@
 
  <p>
   <%=f.fields_for :route, log.build_route do |route_fields| %>
+    <p>
+    <%= f.label :name %><br>
     <%= route_fields.text_field :name %>
-    <%= route_fields.text_field :grade %>
+    </p>
+ <p>
+    <%= f.label :location %><br>
     <%= route_fields.text_field :location %>
+    </p>
+ <p>
+    <%= f.label :grade %><br>
+    <%= route_fields.text_field :grade%>
+    </p>
   <% end %>
 
 

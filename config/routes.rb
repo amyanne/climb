@@ -14,10 +14,8 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     resources :logs
   end
-
-  resources :logs, only: [] do 
-      resources :route
-  end 
+ 
+  resources :routes
  
   #--Comment Routes--#
   resources :logs, only: [] do 

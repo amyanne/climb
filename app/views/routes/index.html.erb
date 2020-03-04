@@ -1,33 +1,9 @@
-<h1>Climbs</h1>
+<h1>Search for routes!</h1>
 <%= form_tag user_routes_path(@user), method: "get" do %>
     <%= text_field_tag :query %>
     <%= submit_tag :search %>
 <% end %>
 
-<a href=routes/new>Add a climb!</a>
 
-    <table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>View</th>
-              <th>Edit</th>
-              <th>Delete</th>
-          </tr>
-        </thead>
-
-        <tbody>
-            <% if current_user == @user %>
-                <% @routes.each do |r| %>
-                    <tr>
-                        <td><%= r.name %></td>
-                        <td><%= link_to "View", user_route_path(@user, r) %></td>
-                        <td><%= link_to "Edit", edit_user_route_path(@user, r) %></td>
-                        <td><%= link_to "Delete", user_route_path(@user, r), method: "delete" %></td>
-                    </tr>
-                <% end %>
-            <% end %>
-        </tbody>
-    </table>
             
 

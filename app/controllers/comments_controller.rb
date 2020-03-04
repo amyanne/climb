@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def create
     puts "hello comments #{@log.inspect}"
     @comment = @log.comments.create(params[:comment].permit(:content))
-      puts "HELP COMMMENTTTSSSS #{@log.inspect}"
+      puts "HELP COMMMENTTTSSSS #{@log.comments.inspect}"
     redirect_to log_comments_path 
   end
 

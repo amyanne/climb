@@ -1,10 +1,13 @@
-<h1 class="center">Welcome to your climbing app!</h1>
+<h1 class="center">Log Page</h1>
+<h3>Route: <%= link_to @log.route.name, route_path(:route_id) if @log.route %>
+<%= @log.route.grade %> <%=  @log.route.location %>
+</h3>
 
 <h1><%= @log.log_date %></h1>
  
-<h3>Route: <%= link_to @log.route.name, route_path(@log.route) if @log.route %></h3>
- 
 <p><%= @log.content %></p>
+
+<p> <a href=logs/index>Back to home!</a></p>
 
 
 Comments:

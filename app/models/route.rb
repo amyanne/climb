@@ -4,4 +4,9 @@ class Route < ApplicationRecord
     
 
     scope :search, -> (query, user) { query ? user.routes.where("name LIKE ?", "%#{query}%") : user.routes }
+
+    def logs
+        Log.find_by(route_id) 
+    end 
+
 end

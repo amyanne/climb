@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :redirect_if_signed_in
 
     def new
-        @user = User.new(user_params)
+        @user = User.new
     end 
 
     def create

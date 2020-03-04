@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_023433) do
+ActiveRecord::Schema.define(version: 2020_03_04_002623) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2020_03_03_023433) do
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "route_id"
     t.string "log_date"
-    t.string "route_id"
-    t.string "user_id"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -34,9 +34,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_023433) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "user_id"
-    t.string "route_id"
-    t.string "log_id"
+    t.integer "log_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,7 +43,10 @@ ActiveRecord::Schema.define(version: 2020_03_03_023433) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "user_id"
   end
 
+  add_foreign_key "logs", "routes"
+  add_foreign_key "logs", "users"
+  add_foreign_key "routes", "logs"
+  add_foreign_key "routes", "users"
 end

@@ -1,9 +1,12 @@
 <h1>Climbs</h1>
 
 
+
+
 <a href=logs/new>Add a climb log!</a>
 
-    <table>
+
+         <table>
         <thead>
           <tr>
               <th>Name</th>
@@ -15,15 +18,17 @@
 
         <tbody>
             <% if current_user == @user %>
-                <% @routes.each do |r| %>
+                <% @logs.each do |r| %>
                     <tr>
-                        <td><%= r.name %></td>
-                        <td><%= link_to "View", user_route_path(@user, r) %></td>
-                        <td><%= link_to "Edit", edit_user_route_path(@user, r) %></td>
-                        <td><%= link_to "Delete", user_route_path(@user, r), method: "delete" %></td>
+                        <td><%= r.log_date %></td>
+                        <td><%= link_to "View", user_log_path(@user, r) %></td>
+                        <td><%= link_to "Edit", edit_user_log_path(@user, r) %></td>
+                        <td><%= link_to "Delete", user_log_path(@user, r), method: "delete" %></td>
                     </tr>
                 <% end %>
             <% end %>
         </tbody>
     </table>
+
+        
             

@@ -11,7 +11,16 @@
   <%= f.label :number_of_attemps %><br>
   <%= f.text_field :num_of_attempts %>
  </p>
+
+
  <p>
+  <%=f.fields_for :route, log.build_route do |route_fields| %>
+    <%= route_fields.text_field :name %>
+    <%= route_fields.text_field :grade %>
+    <%= route_fields.text_field :location %>
+  <% end %>
+
+
 
     <%= f.submit button_name, class: "btn" %>
 <% end %>

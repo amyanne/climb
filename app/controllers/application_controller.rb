@@ -29,5 +29,10 @@ class ApplicationController < ActionController::Base
 
     def set_user
       @user = User.find_by_id(params[:user_id])
-end 
+    end 
+
+    def set_log
+      @log = Log.find_by_id(params[:log_id])
+    end
+  
 end

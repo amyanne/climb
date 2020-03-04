@@ -1,0 +1,13 @@
+<%= form_for([@log, @log.comments.build]) do |f| %>
+
+
+<div class="field">
+  <div class="control">
+    <p>
+  <%= f.label :comment %><br>
+  <%= f.text_area :content %>
+ </p>
+  </div>
+</div>
+<<%= f.submit :reply, class: "btn" %>
+<% end %>

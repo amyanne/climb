@@ -1,7 +1,7 @@
 class Log < ApplicationRecord
-    #validates :route_id, presence: true
     belongs_to :user
     has_one :route
+    has_many :comments, dependent: :destroy 
 
     scope :search, -> (query, user) { query ? user.logs.where("log_date LIKE ?", "%#{query}%") : user.logs }
     # accepts_nested_attributes_for :route
@@ -13,6 +13,14 @@ class Log < ApplicationRecord
         puts "omg I wish this worked #{@route.inspect}"
         puts "here is the route id #{@route.id}"
         self[:route_id] = @route.id
+    end 
+
+    def comment_attributes=(comment_attributes)
+        comment_attributes.values.each do |c|
+            comment = Comment.create(c)
+            self.comments << comment
+        end
+
     end 
 
     

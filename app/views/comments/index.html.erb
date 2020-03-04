@@ -1,16 +1,15 @@
-<h1 class="center">Welcome to your climbing app!</h1>
-
-<h1><%= @log.log_date %></h1>
- 
-<h3>Route: <%= link_to @log.route.name, route_path(@log.route) if @log.route %></h3>
- 
-<p><%= @log.content %></p>
-
 <section class="section comments">
     <div class="container">
         <h2 class="subtitle is-5"><strong><%= @log.comments.count %></strong> Comments</h2>
         <%= render "comments/comments" %>
         <div class="comment-form">
+            <hr />
+            <h3 class="subtitle is-3">Leave a reply</h3>
+             <%= render 'comments/form' %>
+        </div>
+    </div>
+</section>
+    <div class="comment-form">
             <hr />
             <h3 class="subtitle is-3">Leave a reply</h3>
              <%= render 'comments/form' %>

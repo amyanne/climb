@@ -39,11 +39,6 @@ private
     params.require(:log).permit(:log_date, :content, :num_of_attempts, :user_id, :route_id, route_attributes: [:name, :location, :grade])
   end 
 
-
-  def set_log
-    @log = Log.find_by_id(params[:id])
-  end
-
   
 
 

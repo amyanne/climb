@@ -1,5 +1,5 @@
 <h1 class="center">Log Page</h1>
-<h3>Route: <%= link_to @log.route.name, route_path(:route_id) if @log.route %>
+<h3>Route: <%= link_to @log.route.name, route_path(@log.route) if @log.route %>
 <%= @log.route.grade %> <%=  @log.route.location %>
 </h3>
 
@@ -7,13 +7,11 @@
  
 <p><%= @log.content %></p>
 
-<p> <a href=logs/index>Back to home!</a></p>
 
 
 Comments:
-  <% @log.comments.each do |comment| %>
-    <%= link_to comment.user.username, user_path(comment.user) %> said
-    <%= comment.content %>
+  <% @log.comments.each do |c| %>
+    <p><%= c.content %></p>
   <% end %>
 
 <h1>Leave a reply!</h1>

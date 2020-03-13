@@ -3,10 +3,15 @@ class Route < ApplicationRecord
     has_many :comments, through: :logs
     
 
-    scope :search, -> (query, user) { query ? user.routes.where("name LIKE ?", "%#{query}%") : user.routes }
+    scope :search, -> (query) { query ? @routes.where("name LIKE ?", "%#{query}%") : @routes }
 
-    def logs
-        Log.find_by(route_id) 
-    end 
+    # def logs
+    #     Log.where(Log.route.id == self.id).find_each do |log|
+    #         logs << log
+        
+        
+    #     end
+ 
+    # end 
 
 end

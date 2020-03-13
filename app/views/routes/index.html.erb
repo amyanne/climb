@@ -1,5 +1,5 @@
 <h1>Search for routes!</h1>
-<%= form_tag user_routes_path(@user), method: "get" do %>
+<%= form_tag routes_path, method: "get" do %>
     <%= text_field_tag :query %>
     <%= submit_tag :search %>
 <% end %>

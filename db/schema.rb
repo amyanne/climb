@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_175838) do
+ActiveRecord::Schema.define(version: 2020_03_13_223337) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_175838) do
     t.integer "user_id"
     t.integer "route_id"
     t.string "log_date"
+    t.integer "log_id"
   end
 
   create_table "routes", force: :cascade do |t|

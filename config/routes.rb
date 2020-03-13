@@ -10,17 +10,22 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: 'signup'
   post '/signup', to: 'users#create'
 
-  #--Climbing Routes Routes--#
+  #--Logs Routes--#
   resources :users, only: [] do
     resources :logs
   end
- 
+  
+  resources :logs
+  
+  #--Routes Routes--#
   resources :routes
  
   #--Comment Routes--#
   resources :logs, only: [] do 
     resources :comments
   end 
+
+
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

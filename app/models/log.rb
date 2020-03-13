@@ -12,7 +12,6 @@ class Log < ApplicationRecord
         puts "omg I wish this worked #{@route.inspect}"
         puts "here is the route id #{@route.id}"
         self[:route_id] = @route.id
-        
     end 
 
     def comment_attributes=(comment_attributes)
@@ -21,6 +20,11 @@ class Log < ApplicationRecord
 
     end 
 
+    def log_id 
+        self.id
+    end 
+ 
+    
     def route
         Route.find_by_id(self.route_id)
     end

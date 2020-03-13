@@ -1,3 +1,11 @@
-<h1 class="center">Welcome to your climbing app!</h1>
-<a href="/signup">Signup!</a>
-<a href="/login">Login!</a>
+<h1 class="center">Welcome to your climbing log!</h1>
+
+<%= link_to :log_page, user_log_path(@user) if @user %>
+
+
+
+<%= link_to :signup, signup_path if !@user %>
+
+<%= link_to :login, login_path if !@user %>
+
+

@@ -4,7 +4,7 @@ class RoutesController < ApplicationController
 
   def index
     @routes = Route.search(params[:query])
-    puts "####$$$$$$$$$$^^^^^^^^^^#{route_params}"
+
   end
 
   def create 
@@ -14,7 +14,6 @@ class RoutesController < ApplicationController
   def show
     
     @route = Route.find_by_id(params["id"])
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%%%%%%%%%%%%%%%%%%%%%#{@route.logs.inspect}"
   end 
    
  

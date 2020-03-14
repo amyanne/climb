@@ -15,13 +15,9 @@ class LogsController < ApplicationController
 
   def create
     @log = @user.logs.create(log_params)
-    # @log.route_id = Route.find_or_create()
-    puts "lol lol lol #{@log.inspect}"
     
     if @log.save
-      puts "????????? #{@log.inspect}"
         redirect_to user_logs_path
-        puts "!!!!!@@@@@@@@@@@@@@!!!!!!!!!!! #{@log}"
     else 
         render :new
     end

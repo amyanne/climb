@@ -4,10 +4,7 @@ class CommentsController < ApplicationController
 
 
   def create
-    puts "hello comments #{@log.inspect}"
     @comment = @log.comments.create(comment_params)
-    @comment.save!
-      puts "HELP COMMMENTTTSSSS #{@log.comments.inspect}"
     redirect_to log_comments_path 
   end
 

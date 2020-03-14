@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   #--Session Routes--#
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#create'
 
   delete '/logout', to: 'sessions#destroy', as: 'delete_user_session'
 
   #--Users Routes--#
   get '/signup', to: 'users#new', as: 'signup'
   post '/signup', to: 'users#create'
+  
 
   #--Logs Routes--#
   resources :users, only: [] do

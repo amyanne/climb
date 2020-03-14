@@ -8,9 +8,6 @@ class Log < ApplicationRecord
 
     def route_attributes=(route_attributes)
         @route = Route.find_or_create_by(route_attributes)
-        puts "omg I wish this worked #{@route.inspect}"
-        puts "omg I wish this worked #{@route.inspect}"
-        puts "here is the route id #{@route.id}"
         self[:route_id] = @route.id
     end 
 

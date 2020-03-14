@@ -5,6 +5,7 @@ class User < ApplicationRecord
     
     has_many :logs
     has_many :routes, through: :logs
+    has_many :comments, through: :logs
 
     accepts_nested_attributes_for :routes
 

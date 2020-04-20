@@ -2,6 +2,8 @@
 
 <%= link_to :log_page, user_log_path(@user) if @user %>
 
+ <%= link_to "Sign in with Facebook", auth_facebook_callback_path %>
+
 
 
 <%= link_to :signup, signup_path if !@user %>

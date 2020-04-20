@@ -28,8 +28,17 @@ class LogsController < ApplicationController
     redirect_to user_logs_path
   end 
 
-  def update 
-  end 
+  def edit
+    redirect_to user_logs_path unless current_user == @user
+end 
+
+def update
+    if @log.update(log_params)
+        redirect_to user_logs_path
+    else
+        render :edit
+    end 
+end 
 
 private 
 

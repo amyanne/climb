@@ -3,7 +3,7 @@ class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
   def index
-    @routes = Route.search(params[:query])
+    @routes = Route.grade(params[:grade])
 
   end
 
@@ -15,6 +15,8 @@ class RoutesController < ApplicationController
     
     @route = Route.find_by_id(params["id"])
   end 
+
+  
    
  
 

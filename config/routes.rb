@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #--Session Routes--#
   get '/login', to: 'sessions#new', as: 'login'
   post '/login', to: 'sessions#create'
-  get '/auth/facebook/callback' => 'sessions#create'
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   delete '/logout', to: 'sessions#destroy', as: 'delete_user_session'
 

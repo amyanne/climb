@@ -15,8 +15,9 @@ class LogsController < ApplicationController
 
   def create
     @log = @user.logs.create(log_params)
-    
+    puts "creating log for this user: #{@user.inspect}"
     if @log.save
+        puts "log is saved #{@log.inspect}"
         redirect_to user_logs_path
     else 
         render :new

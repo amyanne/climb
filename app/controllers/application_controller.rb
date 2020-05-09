@@ -37,4 +37,8 @@ class ApplicationController < ActionController::Base
       @log = Log.find_by_id(params[:log_id])
     end
   
+    protected
+    def after_sign_in_path_for(resource)
+      user_logs_path(@user.id)
+    end
 end

@@ -4,7 +4,7 @@ class LogsController < ApplicationController
    
   def index
     @logs = Log.search(params[:query], @user)
-   end
+  end
 
   def new
     @log = Log.new
@@ -15,9 +15,7 @@ class LogsController < ApplicationController
 
   def create
     @log = @user.logs.create(log_params)
-    puts "creating log for this user: #{@user.inspect}"
     if @log.save
-        puts "log is saved #{@log.inspect}"
         redirect_to user_logs_path
     else 
         render :new
@@ -31,7 +29,7 @@ class LogsController < ApplicationController
 
   def edit
     redirect_to user_logs_path unless current_user == @user
-end 
+  end 
 
 def update
     if @log.update(log_params)

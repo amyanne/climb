@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @comment = @log.comments.find(params[:id])
     @comment.destroy
     redirect_to user_logs_path
-end
+  end
 
 private 
 

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   end
   
   resources :logs
+
+  get '/longest_log', to: 'logs#long_log'
   
   #--Routes Routes--#
   resources :routes

@@ -1,7 +1,7 @@
-Comments:
+<h3 class="comments"> Comments:
   <% @log.comments.each do |comment| %>
-    <td><%= comment.content %></td>
-  <% end %>
+    <td><br><%= comment.content %><br></td>
+  <% end %> </h3>
 
-<h1>Leave a reply!</h1>
+<h1 class="comments">Leave a reply!</h1>
 <%= render partial: "comments/form", locals: {comment: @comment, button_name: "reply"} %>

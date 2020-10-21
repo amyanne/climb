@@ -1,8 +1,9 @@
-<h1 class="center">Routes Page!</h1>
+<h1 class="log">Routes Page!</h1>
 
-<h2><%= @route.name %> </h2> has the following logs:
+<h3 class="log"><br><%= @route.name %>  has the following logs:
  
  <% @route.logs.each do |l| %>
   <%= link_to l.log_date, log_path(l.id) %>
 <% end %>
-
+<br><br>
+</h3>

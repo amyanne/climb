@@ -12,6 +12,10 @@ class LogsController < ApplicationController
 
   end 
 
+  def long_log
+    @logs = Log.where(params[:longest_log])
+  end 
+
 
   def create
     @log = @user.logs.create(log_params)

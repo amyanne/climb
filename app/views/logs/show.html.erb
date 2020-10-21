@@ -1,19 +1,19 @@
 <h1 class="log">Log Page</h1>
-<h3><br> Route: <%= link_to @log.route.name, route_path(@log.route) if @log.route %>
+<h3><br><div class="card"><div class="container"> Route: <%= link_to @log.route.name, route_path(@log.route) if @log.route %>
 <%= @log.route.grade %> <%=  @log.route.location %>
-<br><br></h3>
+<br><br><%= @log.log_date %><p class="details"><%= @log.content %></p><br></div></div> Comments:
+  <% @log.comments.each do |c| %>
+   <div class="card"><div class="container">
+ <p class="comments"><%= c.content %></p></div></div>
+  <% end %></h3>
 
-<h1 class="log"><%= @log.log_date %><p class="details"><%= @log.content %></p> </h1>
+
  
 
 
 
 
-<h3> Comments:
-  <% @log.comments.each do |c| %>
-    <p class="comments"><%= c.content %></p>
-  <% end %>
-  </h3>
+
 
 <h1 class="comments">Leave a reply!</h1>
 <%= render partial: "comments/form", locals: {comment: @comment, button_name: "reply"} %>

@@ -22,7 +22,7 @@ h1.main {
   }
 
   h1.log {
-    background-color: lightsteelblue;
+    background-color: steelblue;
     font-family: serif;
     font-variant: petite-caps;
     border-style: groove;
@@ -46,7 +46,7 @@ h1.main {
   }
 
   h3 {
-    background-color: bisque;
+    background-color: lightsteelblue;
     font: Georgia, serif;
     text-align: center;
     border-style: groove;
@@ -58,7 +58,7 @@ h1.main {
   }
 
   #comment {
-    background-color: bisque;
+    background-color: lightgrey;
     font: Georgia, serif;
     text-align: center;
     border-style: groove;
@@ -82,5 +82,20 @@ h1.main {
   .center {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    transition: 0.3s;
+    background-color: bisque;
+  }
+  .container {
+    padding: 2px 16px;
+    background-color: #ffbb6a;
   }
   

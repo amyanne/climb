@@ -22,7 +22,6 @@
 Building the feature to allow users to create an account and log inthrough facebook was the most challenging one. Learning to use Omniauth and facebook developers was new to me and required reasearch to effectively utilize those methods. Since then I have looked more into the most efficient ways to build user sign up and log ins. I plan on switching to okta in the future for bulding these features. 
 <h2> Future Implementation </h2>
 <ul>
-  <li>CSS design</li>
   <li>User Profiles</li>
 </ul>
 
